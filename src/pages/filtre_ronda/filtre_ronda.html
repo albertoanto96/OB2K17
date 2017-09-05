@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Filtrat</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="logs">
+  <div>
+    <ion-list radio-group [(ngModel)]="cat" >
+          <ion-item style="background-color: transparent">
+            <ion-label>Esport</ion-label>
+            <ion-select [(ngModel)]="sport" multiple="false">
+              <ion-option *ngFor="let sport of sports" (ionSelect)="selectSport(sport)">{{sport.nom}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item style="background-color: transparent">
+            <ion-label>Masculí</ion-label>
+            <ion-radio value="Masculí"></ion-radio>
+          </ion-item>
+          <ion-item style="background-color: transparent">
+            <ion-label>Femení</ion-label>
+            <ion-radio value="Femení"></ion-radio>
+          </ion-item>
+    </ion-list>
+  </div>
+  <div text-center="">
+  <button (click)="filtre()" ion-button color="dark" outline>Aplica filtrat</button>
+  </div>
+</ion-content>

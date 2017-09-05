@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "13996629048",
+    "firebase_url": "https://olimpiadesbegues-fc92e.firebaseio.com",
+    "project_id": "olimpiadesbegues-fc92e",
+    "storage_bucket": "olimpiadesbegues-fc92e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13996629048:android:0f2db5e1129d37b9",
+        "android_client_info": {
+          "package_name": "com.olimpiades.bgs2017"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13996629048-vo4c834rmj07bsha3n6r07btvi87jm77.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAC8p6rFPaEN8BuzvIG7rto6EfE0CF3eEw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

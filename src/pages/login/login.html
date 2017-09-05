@@ -1,0 +1,36 @@
+<ion-content >
+  <div padding [@flyInBottomFast]="cloudState" id="cloud-layer">
+
+    <ion-row style="border: none">
+      <ion-col style="border: none">
+        <img [@flyInBottomSlow]="logoState" src="assets/img/logo.png" />
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="border: none">
+      <ion-col style="border: none">
+        <ion-list inset [@bounceInBottom]="formState">
+
+          <ion-item>
+            <ion-label>Mail</ion-label>
+            <ion-input type="email" [(ngModel)]="mail"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Contrasenya</ion-label>
+            <ion-input type="password" [(ngModel)]="pass"></ion-input>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+    <ion-row style="border: none">
+      <ion-col style="border: none">
+        <button ion-button class="login-button" [@fadeIn]="loginState" (click)="login()">Iniciar Sessió</button>
+        <button ion-button class="login-button" [@fadeIn]="loginState" (click)="register()">Registrar-se</button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>

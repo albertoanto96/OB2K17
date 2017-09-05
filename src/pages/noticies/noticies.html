@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Notícies
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="logs">
+  <ion-card *ngFor="let noticia of noticies">
+    <ion-card-header>
+      {{noticia.title}}
+    </ion-card-header>
+    <ion-card-content>
+      {{noticia.body}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

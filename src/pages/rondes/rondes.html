@@ -1,0 +1,208 @@
+<ion-content class="logs">
+
+  <div text-center="">
+    <h3>{{esport}} {{cat}}</h3>
+  </div>
+  <div padding>
+    <ion-segment [(ngModel)]="ronda">
+      <ion-segment-button value="previa">
+        Previa
+      </ion-segment-button>
+      <ion-segment-button value="vuitens">
+        Vuitens
+      </ion-segment-button>
+      <ion-segment-button value="cuarts">
+        Quarts
+      </ion-segment-button>
+      <ion-segment-button value="semifinal">
+        Semis
+      </ion-segment-button>
+      <ion-segment-button value="final">
+        Final
+      </ion-segment-button>
+      <ion-segment-button value="repesca">
+        Repesca
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="ronda">
+  <ion-list *ngSwitchCase="'final'">
+    <div *ngFor="let final of finals">
+      <ion-row style="border: none">
+        <ion-col text-center="" style="border: none">
+          <ion-chip text-left="" color="danger" *ngIf="final.team2===final.winner">
+            <ion-label >{{final.team1}}</ion-label>
+          </ion-chip>
+          <ion-chip text-left="" color="secondary" *ngIf="final.team1===final.winner">
+            <ion-label >{{final.team1}}</ion-label>
+          </ion-chip>
+          <ion-chip text-left="" color="light" *ngIf="!final.winner">
+            <ion-label >{{final.team1}}</ion-label>
+          </ion-chip>
+        </ion-col>
+        <ion-col text-center="" style="border: none"><img src="assets/img/vs.png" style="width: 30px;height: 30px;"></ion-col>
+        <ion-col text-center="" style="border: none">
+          <ion-chip  text-right="" color="secondary" *ngIf="final.team2===final.winner">
+            <ion-label >{{final.team2}}</ion-label>
+          </ion-chip>
+          <ion-chip  text-right="" color="danger" *ngIf="final.team1===final.winner">
+            <ion-label >{{final.team2}}</ion-label>
+          </ion-chip>
+          <ion-chip text-left="" color="light" *ngIf="!final.winner">
+            <ion-label >{{final.team2}}</ion-label>
+          </ion-chip>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-list>
+    <ion-list *ngSwitchCase="'semifinal'">
+      <div *ngFor="let semifinal of semifinals">
+        <ion-row style="border: none">
+          <ion-col text-center="" style="border: none">
+            <ion-chip text-left="" color="danger" *ngIf="semifinal.team2===semifinal.winner">
+              <ion-label >{{semifinal.team1}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="secondary" *ngIf="semifinal.team1===semifinal.winner">
+              <ion-label >{{semifinal.team1}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="light" *ngIf="!semifinal.winner">
+              <ion-label >{{semifinal.team1}}</ion-label>
+            </ion-chip>
+          </ion-col>
+          <ion-col text-center="" style="border: none"><img src="assets/img/vs.png" style="width: 30px;height: 30px;"></ion-col>
+          <ion-col text-center="" style="border: none">
+            <ion-chip  text-right="" color="secondary" *ngIf="semifinal.team2===semifinal.winner">
+              <ion-label >{{semifinal.team2}}</ion-label>
+            </ion-chip>
+            <ion-chip  text-right="" color="danger" *ngIf="semifinal.team1===semifinal.winner">
+              <ion-label >{{semifinal.team2}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="light" *ngIf="!semifinal.winner">
+              <ion-label >{{semifinal.team2}}</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'cuarts'">
+      <div *ngFor="let cuart of cuarts">
+        <ion-row style="border: none">
+          <ion-col text-center="" style="border: none">
+            <ion-chip text-left="" color="danger" *ngIf="cuart.team2===cuart.winner">
+              <ion-label >{{cuart.team1}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="secondary" *ngIf="cuart.team1===cuart.winner">
+              <ion-label >{{cuart.team1}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="light" *ngIf="!cuart.winner">
+              <ion-label >{{cuart.team1}}</ion-label>
+            </ion-chip>
+          </ion-col>
+          <ion-col text-center="" style="border: none"><img src="assets/img/vs.png" style="width: 30px;height: 30px;"></ion-col>
+          <ion-col text-center="" style="border: none">
+            <ion-chip  text-right="" color="secondary" *ngIf="cuart.team2===cuart.winner">
+              <ion-label >{{cuart.team2}}</ion-label>
+            </ion-chip>
+            <ion-chip  text-right="" color="danger" *ngIf="cuart.team1===cuart.winner">
+              <ion-label >{{cuart.team2}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="light" *ngIf="!cuart.winner">
+              <ion-label >{{cuart.team2}}</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'vuitens'">
+      <div *ngFor="let vuite of vuitens">
+          <ion-row style="border: none">
+            <ion-col text-center="" style="border: none">
+        <ion-chip text-left="" color="danger" *ngIf="vuite.team2===vuite.winner">
+          <ion-label >{{vuite.team1}}</ion-label>
+        </ion-chip>
+              <ion-chip text-left="" color="secondary" *ngIf="vuite.team1===vuite.winner">
+                <ion-label >{{vuite.team1}}</ion-label>
+              </ion-chip>
+              <ion-chip text-left="" color="light" *ngIf="!vuite.winner">
+                <ion-label >{{vuite.team1}}</ion-label>
+              </ion-chip>
+            </ion-col>
+            <ion-col text-center="" style="border: none"><img src="assets/img/vs.png" style="width: 30px;height: 30px;"></ion-col>
+            <ion-col text-center="" style="border: none">
+              <ion-chip  text-right="" color="secondary" *ngIf="vuite.team2===vuite.winner">
+                <ion-label >{{vuite.team2}}</ion-label>
+              </ion-chip>
+        <ion-chip  text-right="" color="danger" *ngIf="vuite.team1===vuite.winner">
+          <ion-label >{{vuite.team2}}</ion-label>
+        </ion-chip>
+              <ion-chip text-left="" color="light" *ngIf="!vuite.winner">
+                <ion-label >{{vuite.team2}}</ion-label>
+              </ion-chip>
+            </ion-col>
+          </ion-row>
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'repesca'">
+      <div *ngFor="let repesc of repesca">
+        <ion-row style="border: none">
+          <ion-col text-center="" style="border: none">
+            <ion-chip text-left="" color="danger" *ngIf="repesc.team2===repesc.winner">
+              <ion-label >{{repesc.team1}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="secondary" *ngIf="repesc.team1===repesc.winner">
+              <ion-label >{{repesc.team1}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="light" *ngIf="!repesc.winner">
+              <ion-label >{{repesc.team1}}</ion-label>
+            </ion-chip>
+          </ion-col>
+          <ion-col text-center="" style="border: none"><img src="assets/img/vs.png" style="width: 30px;height: 30px;"></ion-col>
+          <ion-col text-center="" style="border: none">
+            <ion-chip  text-right="" color="secondary" *ngIf="repesc.team2===repesc.winner">
+              <ion-label >{{repesc.team2}}</ion-label>
+            </ion-chip>
+            <ion-chip  text-right="" color="danger" *ngIf="repesc.team1===repesc.winner">
+              <ion-label >{{repesc.team2}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="light" *ngIf="!repesc.winner">
+              <ion-label >{{repesc.team2}}</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-list>
+    <ion-list *ngSwitchCase="'previa'">
+      <div *ngFor="let previ of previa">
+        <ion-row style="border: none">
+          <ion-col text-center="" style="border: none">
+            <ion-chip text-left="" color="danger" *ngIf="previ.team2===previ.winner">
+              <ion-label >{{previ.team1}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="secondary" *ngIf="previ.team1===previ.winner">
+              <ion-label >{{previ.team1}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="light" *ngIf="!previ.winner">
+              <ion-label >{{previ.team1}}</ion-label>
+            </ion-chip>
+          </ion-col>
+          <ion-col text-center="" style="border: none"><img src="assets/img/vs.png" style="width: 30px;height: 30px;"></ion-col>
+          <ion-col text-center="" style="border: none">
+            <ion-chip  text-right="" color="secondary" *ngIf="previ.team2===previ.winner">
+              <ion-label >{{previ.team2}}</ion-label>
+            </ion-chip>
+            <ion-chip  text-right="" color="danger" *ngIf="previ.team1===previ.winner">
+              <ion-label >{{previ.team2}}</ion-label>
+            </ion-chip>
+            <ion-chip text-left="" color="light" *ngIf="!previ.winner">
+              <ion-label >{{previ.team2}}</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-list>
+  </div>
+  <div text-center="">
+  <button (tap)="cambio()" ion-button color="dark" outline  >Filtra</button>
+  </div>
+
+</ion-content>

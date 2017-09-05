@@ -1,0 +1,26 @@
+<ion-content class="main-view">
+  <div class="modal_content">
+    <p *ngIf="submitAttempt" style="color: #ea6153;">Introdueix totes les dades</p>
+    <form [formGroup]="sampleForm">
+      <ion-item>
+        <ion-label floating>Mail</ion-label>
+        <ion-input formControlName="email" type="email" [class.invalid]="!sampleForm.controls.email.valid" [(ngModel)]="user"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!sampleForm.controls.email.valid && user!=null">
+        <p>Introdueix un mail vàlid</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Contrasenya</ion-label>
+        <ion-input formControlName="password" type="password" [class.invalid]="!sampleForm.controls.password.valid" [(ngModel)]="pass1"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!sampleForm.controls.password.valid && pass1!=null">
+        <p>La contrasenya ha de tenir com a mínim 5 caràcters</p>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Repeteix contrasenya</ion-label>
+        <ion-input formControlName="password" type="password" [(ngModel)]="pass2"></ion-input>
+      </ion-item>
+    </form>
+    <button ion-button full color="primary" (click)="save()">Crear un compte nou!</button>
+  </div>
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detall de {{equip.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="logs">
+  <ion-list>
+    <ion-item style="background-color: transparent">
+      <!--<ion-avatar item-start>
+        <img src="{{character.image}}">
+      </ion-avatar>-->
+      <h2>{{equip.name}}</h2>
+      <p>{{equip.category}}</p>
+    </ion-item>
+
+    <ion-item style="background-color: transparent" >
+      Teléfon
+      <ion-note item-end style="color: #666666" >
+       {{equip.telephone}}  <ion-icon name="call" (click)="call(equip.telephone)"></ion-icon>
+      </ion-note>
+    </ion-item>
+    <ion-item style="background-color: transparent">
+      Color
+      <ion-note item-end style="color: #666666">
+        {{equip.color}}
+      </ion-note>
+    </ion-item>
+    <ion-item style="background-color: transparent">
+      Capità
+      <ion-note item-end style="color: #666666">
+        {{equip.captain}}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

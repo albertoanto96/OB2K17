@@ -1,0 +1,96 @@
+
+<ion-content class="logs">
+
+  <div text-center="">
+  <h1 style="font-family: Stencil;">OLIMPÍADES CASINO BEGUES 2017</h1>
+    <button ion-button outline icon-right round (tap)="noticPage()">
+      Notícies
+      <ion-icon name="megaphone"></ion-icon>
+    </button>
+    <ion-fab>
+      <button ion-fab mini (tap)="info()"><ion-icon name="information"></ion-icon></button>
+    </ion-fab>
+  </div>
+
+  <ion-grid>
+    <h5 class="titm">Masculí</h5>
+    <ion-row wrap>
+    <ion-col style="border: none;text-align: center;"width-25><strong>Posició</strong></ion-col>
+    <ion-col style="border: none; text-align: center;"width-25><strong>Nom</strong></ion-col>
+    <ion-col style="border:none; text-align: center;border-radius: 25px"width-25><strong>Puntuació</strong></ion-col>
+    </ion-row>
+    <div *ngIf="AM===false" text-center=""><ion-spinner name="dots"></ion-spinner></div>
+    <div *ngIf="AM===true">
+    <ion-row wrap *ngFor="let res of ResArrayM">
+      <ion-col style="border: none; text-align: center;padding-top: 5%" width-25>{{ res.pos }} </ion-col>
+      <ion-col style="border: none; text-align: center"width-25>
+        <div *ngIf="res.pos===1">
+          <ion-chip>
+        <ion-icon name="trophy" color="gold"></ion-icon>
+        <ion-label>{{res.name}}</ion-label>
+      </ion-chip>
+        </div>
+        <div *ngIf="res.pos===2">
+          <ion-chip>
+            <ion-icon name="medal" color="silver"></ion-icon>
+            <ion-label>{{res.name}}</ion-label>
+          </ion-chip>
+        </div>
+        <div *ngIf="res.pos===3">
+          <ion-chip>
+            <ion-icon name="ribbon" color="bronze"></ion-icon>
+            <ion-label>{{res.name}}</ion-label>
+          </ion-chip>
+        </div>
+        <div *ngIf="res.pos!==1&&res.pos!==2&&res.pos!==3">
+          <ion-chip>
+            <ion-label>{{res.name}}</ion-label>
+          </ion-chip>
+        </div>
+      </ion-col>
+      <ion-col style="border: none; text-align: center; padding-top: 5%"width-25> {{ res.points }} </ion-col>
+    </ion-row>
+    </div>
+  </ion-grid>
+  <ion-grid>
+    <h5 class="titf">Femení</h5>
+    <ion-row wrap>
+      <ion-col style="border: none;text-align: center;"width-25><strong>Posició</strong></ion-col>
+      <ion-col style="border: none; text-align: center;"width-25><strong>Nom</strong></ion-col>
+      <ion-col style="border:none; text-align: center;border-radius: 25px"width-25><strong>Puntuació</strong></ion-col>
+    </ion-row>
+    <div *ngIf="FM===false" text-center=""><ion-spinner name="dots"></ion-spinner></div>
+    <div *ngIf="FM===true">
+    <ion-row wrap *ngFor="let res of ResArrayF">
+      <ion-col style="border: none; text-align: center;padding-top: 5%" width-25>{{ res.pos }} </ion-col>
+      <ion-col style="border: none; text-align: center"width-25>
+        <div *ngIf="res.pos===1">
+          <ion-chip>
+            <ion-icon name="trophy" color="gold"></ion-icon>
+            <ion-label>{{res.name}}</ion-label>
+          </ion-chip>
+        </div>
+        <div *ngIf="res.pos===2">
+          <ion-chip>
+            <ion-icon name="medal" color="silver"></ion-icon>
+            <ion-label>{{res.name}}</ion-label>
+          </ion-chip>
+        </div>
+        <div *ngIf="res.pos===3">
+          <ion-chip>
+            <ion-icon name="ribbon" color="bronze"></ion-icon>
+            <ion-label>{{res.name}}</ion-label>
+          </ion-chip>
+        </div>
+        <div *ngIf="res.pos!==1&&res.pos!==2&&res.pos!==3">
+          <ion-chip>
+            <ion-label>{{res.name}}</ion-label>
+          </ion-chip>
+        </div>
+      </ion-col>
+      <ion-col style="border: none; text-align: center; padding-top: 5%"width-25> {{ res.points }} </ion-col>
+    </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+

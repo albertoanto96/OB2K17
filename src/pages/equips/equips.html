@@ -1,0 +1,28 @@
+<ion-content class="logs">
+  <div>
+    <ion-list radio-group [(ngModel)]="cat" (ionChange)="cambio()">
+      <ion-row style="border: none">
+        <ion-col style="border: none">
+      <ion-item style="background-color: transparent">
+        <ion-label>Masculí</ion-label>
+        <ion-radio value="Masculí"></ion-radio>
+      </ion-item>
+        </ion-col>
+        <ion-col style="border: none">
+      <ion-item style="background-color: transparent">
+        <ion-label>Femení</ion-label>
+        <ion-radio value="Femení"></ion-radio>
+      </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+  <div text-center="">
+  <h3 style="font-family: Stencil;">Fes click a un equip per veure més informació</h3>
+  </div>
+  <ion-list >
+  <ion-item *ngFor="let equip of equips" style="background-color: transparent;">
+    <h2 (tap)="detail(equip)">{{equip.name}}</h2>
+  </ion-item>
+</ion-list>
+</ion-content>

@@ -1,0 +1,47 @@
+
+
+<ion-content class="logs">
+  <ion-item style="background-color: transparent">
+    <ion-label>Equip</ion-label>
+    <ion-select [(ngModel)]="equip" multiple="false">
+      <ion-option *ngFor="let equip of equips" (ionSelect)="selectEquip(equip)">{{equip.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-list *ngIf="profile===true">
+    <ion-item style="background-color: transparent">
+      <!--<ion-avatar item-start>
+        <img src="{{character.image}}">
+      </ion-avatar>-->
+      <h2>{{team.name}}</h2>
+      <p>{{team.category}}</p>
+    </ion-item>
+    <ion-item style="background-color: transparent">
+      Color
+      <ion-note item-end style="color: #666666">
+        {{team.color}}
+      </ion-note>
+    </ion-item>
+    <ion-item style="background-color: transparent">
+      Punts
+      <ion-note item-end style="color: #666666">
+        {{team.points}}
+      </ion-note>
+    </ion-item>
+    <ion-item style="background-color: transparent">
+      Posició
+      <ion-note item-end style="color: #666666">
+        {{pos}}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <h3 text-center="" style="font-family: Stencil">Pròxims partits</h3>
+    <ion-item *ngFor="let event of events" style="background-color: transparent">
+      <h2>{{event.sport}} </h2>
+      <h3 *ngIf="event.all!=='true'">{{event.team1}} VS {{event.team2}}</h3>
+      <p>Lloc: <a href="{{event.link}}">{{event.location}}</a></p>
+      <p>Dia: {{event.date}}</p>
+      <p>Hora: {{event.time}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
